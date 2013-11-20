@@ -9,13 +9,13 @@ import java.util.Arrays;
 
 public class ArrayHomework {
 
-    public static int[] joinMethod(int[]a, int[]b) {
+    public static int[] join(int[]a, int[]b) {
         int[] joinedArr = new int[a.length+b.length];
         System.arraycopy(a,0,joinedArr,0,a.length);
         System.arraycopy(b, 0, joinedArr, a.length, b.length);
         return joinedArr;
     }
-    public static int[] joinDistinctMethod(int[] a) {
+    public static int[] joinDistinct(int[] a) {
         int[] distArr = new int[a.length];
         for(int i = 0; i<a.length; i++){
             Integer currVal = a[i];
@@ -32,7 +32,7 @@ public class ArrayHomework {
         }
         return distArr;
     }
-    public static int[] commonValMethod(int[] a, int[] b){
+    public static int[] commonVal(int[] a, int[] b){
         int[] commArr = new int[a.length];
         for (int i=0;i<a.length;i++){
             for(int j=0; j<b.length; j++){
@@ -43,7 +43,7 @@ public class ArrayHomework {
         }
         return commArr;
     }
-    public static int[] outerValMethod(int[] a, int[] b){
+    public static int[] outerVal(int[] a, int[] b){
         int[] outerArr = new int[a.length];
         boolean isfound = false;
         for (int i=0;i<a.length;i++){
@@ -74,11 +74,11 @@ public class ArrayHomework {
     public static void main(String[] args) {
         int arr1[]=new int[] {1,5,4,23,65,32,78};
         int arr2[]=new int[] {3,5,24,4,1,2,34,45,32};
-        int[] joinArr = joinMethod(arr1,arr2);
+        int[] joinArr = join(arr1,arr2);
         //for (int i = 0; i<joinArr.length; i++) System.out.println(i + ": " + joinArr[i]);
-        int[] joinDist = joinDistinctMethod(joinArr);
-        int[] commVal = commonValMethod(arr2,arr1);
-        int[] outerVal = outerValMethod(arr1,arr2);
+        int[] joinDist = joinDistinct(joinArr);
+        int[] commVal = commonVal(arr2,arr1);
+        int[] outerVal = outerVal(arr1,arr2);
     }
 }
 
